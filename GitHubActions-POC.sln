@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubActions-POC", "GitHubActions-POC\GitHubActions-POC.csproj", "{BBE834DF-8366-41ED-BC4B-2C43A53AF43A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubActions-POC.Test", "GitHubActions-POC.Test\GitHubActions-POC.Test.csproj", "{C981B107-37EA-4936-A6A0-C4E6B57E9870}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BBE834DF-8366-41ED-BC4B-2C43A53AF43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBE834DF-8366-41ED-BC4B-2C43A53AF43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBE834DF-8366-41ED-BC4B-2C43A53AF43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C981B107-37EA-4936-A6A0-C4E6B57E9870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C981B107-37EA-4936-A6A0-C4E6B57E9870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C981B107-37EA-4936-A6A0-C4E6B57E9870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C981B107-37EA-4936-A6A0-C4E6B57E9870}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
