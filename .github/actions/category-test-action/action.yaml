@@ -11,6 +11,12 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget
     - run: dotnet restore
       shell: bash
     - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}"
