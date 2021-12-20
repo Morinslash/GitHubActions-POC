@@ -1,9 +1,15 @@
 name: dotnet test
-on: [push]
+
+on:
+  workflow_run:
+    workflows: ["dotnet build"]
+    types:
+      - completed
+
 jobs:
   unit-test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-20.04
-    needs: build
     strategy:
       matrix: 
         dotnet-version: ['5.0.x']
@@ -13,7 +19,7 @@ jobs:
         run: dotnet restore
       - name: Unit tests
         run: dotnet test --filter "Category=UnitTest"
-        
+  
   integration-test:
     runs-on: ubuntu-20.04
     needs: unit-test
