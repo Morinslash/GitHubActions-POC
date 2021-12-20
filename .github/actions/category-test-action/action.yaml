@@ -1,0 +1,22 @@
+name: "Category Test XUnit"
+description: "Run a dotnet test command with parametrized filter"
+
+inputs:
+  CATEGORY:
+    description: "A category name to run test from"
+    required: true
+    default: "ProvideCategory"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget
+    - run: dotnet restore
+      shell: bash
+    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}"
+      shell: bash
