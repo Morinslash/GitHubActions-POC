@@ -1,11 +1,10 @@
 name: "Category Test XUnit"
-descripiton: "Run a dotnet test command with parametrized filter"
-autor: "Morinslash"
+description: "Run a dotnet test command with parametrized filter"
 
 inputs:
   CATEGORY:
-    descripiton: "A category name to run test from"
-    required: "ture"
+    description: "A category name to run test from"
+    required: true
     default: "ProvideCategory"
 
 runs:
