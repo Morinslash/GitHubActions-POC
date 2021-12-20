@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "GitHubActions-POC.Test": {
+    "GitHubAction-POC.Integration.Test": {
       "commandName": "Project",
       "environmentVariables": {
         
