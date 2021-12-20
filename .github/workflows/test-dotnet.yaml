@@ -27,10 +27,9 @@ jobs:
         dotnet-version: ['5.0.x']
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: dotnet restore
-      - name: Unit tests
-        run: dotnet test --filter "Category=UnitTest"
+      - uses: ./.github/category-test-action
+        with:
+          CATEGORY: "UnitTest"
   
   integration-test:
     runs-on: ubuntu-20.04
@@ -40,7 +39,6 @@ jobs:
         dotnet-version: ['5.0.x']
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: dotnet restore
-      - name: Unit tests
-        run: dotnet test --filter "Category=IntegrationTest"
+      - uses: ./.github/category-test-action
+        with:
+          CATEGORY: "IntegrationTest"

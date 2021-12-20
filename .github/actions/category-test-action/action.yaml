@@ -1,0 +1,17 @@
+name: "Category Test XUnit"
+descripiton: "Run a dotnet test command with parametrized filter"
+autor: "Morinslash"
+
+inputs:
+  CATEGORY:
+    descripiton: "A category name to run test from"
+    required: "ture"
+    default: "ProvideCategory"
+
+runs:
+  using: "composite"
+  steps:
+    - run: dotnet restore
+      shell: bash
+    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}"
+      shell: bash
