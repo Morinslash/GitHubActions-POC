@@ -27,7 +27,7 @@ jobs:
         dotnet-version: ['5.0.x']
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/category-test-action
+      - uses: ./.github/actions/category-test-action
         with:
           CATEGORY: "UnitTest"
   
@@ -39,6 +39,6 @@ jobs:
         dotnet-version: ['5.0.x']
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/category-test-action
+      - uses: ./.github/actions/category-test-action
         with:
           CATEGORY: "IntegrationTest"
