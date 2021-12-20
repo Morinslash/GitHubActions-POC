@@ -18,7 +18,7 @@ runs:
           ${{ runner.os }}-nuget
     - run: dotnet restore
       shell: bash
-    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}" trx --result-directory "TestResults"
+    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}" trx --results-directory "TestResults"
       shell: bash
     - uses: actions/upload-artifact@v2
       if: ${{ always() }}
