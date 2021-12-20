@@ -1,8 +1,9 @@
 name: dotnet test
 on: [push]
-jobs: 
-  test:
+jobs:
+  unit-test:
     runs-on: ubuntu-20.04
+    needs: build
     strategy:
       matrix: 
         dotnet-version: ['5.0.x']
@@ -12,3 +13,16 @@ jobs:
         run: dotnet restore
       - name: Unit tests
         run: dotnet test --filter "Category=UnitTest"
+        
+  integration-test:
+    runs-on: ubuntu-20.04
+    needs: unit-test
+    strategy:
+      matrix:
+        dotnet-version: ['5.0.x']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Unit tests
+        run: dotnet test --filter "Category=IntegrationTest"
