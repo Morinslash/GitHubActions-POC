@@ -9,7 +9,7 @@ jobs:
         matrix: 
           dotnet-version: ['3.0', '3.1.x','5.0.x' ]
       steps:
-      - uses: actions/checout@v2
+      - uses: actions/checkout@v2
       - name: Setup .NET SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v1.7.2
         with:
