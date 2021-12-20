@@ -1,0 +1,14 @@
+name: dotnet test
+on: [push]
+jobs: 
+  test:
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix: 
+        dotnet-version: ['5.0.x']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Unit tests
+        run: dotnest test
