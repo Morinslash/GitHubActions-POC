@@ -11,4 +11,4 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
       - name: Unit tests
-        run: dotnet test
+        run: dotnet test --filter "Category=UnitTest"
