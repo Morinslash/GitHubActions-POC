@@ -10,3 +10,4 @@ jobs:
     with:
       registry-url: morinslash/githubactions-poc
       context: ./GitHubActions-POC
+      tags: latest
