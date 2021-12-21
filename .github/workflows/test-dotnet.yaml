@@ -9,4 +9,4 @@ jobs:
     uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/docker-build.yaml@master
     with:
       registry-url: morinslash/githubactions-poc
-      directory: GitHubActions-POC
+      context: ./GitHubActions-POC
