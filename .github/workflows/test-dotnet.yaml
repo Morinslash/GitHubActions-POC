@@ -3,5 +3,11 @@ name: Caller
 on: [push]
 
 jobs:
-  call-workflow:
-    uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/dotnet-workflow.yaml@master 
+  build-workflow:
+    uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/dotnet-workflow.yaml@master
+  docker-workflow:
+    needs: build-workflow
+    uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/docker-build.yaml@master
+    with:
+      registry-url: morinslash/githubactions-poc
+      context: ./GitHubActions-POC
