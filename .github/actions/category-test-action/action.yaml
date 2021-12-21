@@ -18,16 +18,5 @@ runs:
           ${{ runner.os }}-nuget
     - run: dotnet restore
       shell: bash
-    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}" trx --results-directory "TestResults"
+    - run: dotnet test --filter "Category=${{ inputs.CATEGORY }}"
       shell: bash
-    - uses: actions/upload-artifact@v2
-      if: ${{ always() }}
-      with:
-        name: ${{ inputs.CATEGORY }}-test-results
-        path: TestResults
-    - uses: dorny/test-reporter@v1
-      with:
-        artifact: ${{ inputs.CATEGORY }}-test-results
-        name: ${{ inputs.CATEGORY }} Tests
-        path: TestResults
-        reporter: dotnet-trx
