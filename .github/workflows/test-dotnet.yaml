@@ -4,4 +4,4 @@ on: [push]
 
 jobs:
   call-workflow:
-    uses: morinslash/githubactions-poc/.github/workflows/reusable-workflow.yaml@Integration_test_example
+    uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/dotnet-workflow.yaml@main 
