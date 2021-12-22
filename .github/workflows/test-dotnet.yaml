@@ -4,4 +4,9 @@ on: [push]
 
 jobs:
   build-workflow:
-    uses: morinslash/GitHubActions-DotNet-Workflows/.github/workflows/dotnet-workflow.yaml@master
+    - uses: actions/checkout@v2
+        with:
+          repository:  Morinslash/GitHubActions-DotNet-Workflows
+          # token: ${{ secrets.GIT_TOKEN }}
+          path: .github/actions/category-test-action
+    - uses: ./.github/workflows/dotnet-workflow.yaml@master
